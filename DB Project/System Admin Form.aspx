@@ -10,9 +10,11 @@
     <style>
         form {
   width: 1000px;
-  margin: 0 auto;
+    margin: 50px auto;
   padding: 20px;
   border: 1px solid #ccc;
+  background-color:white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
   border-radius: 5px;
   font-family: Roboto
 }
@@ -30,6 +32,7 @@ input[type="submit"] {
   box-sizing: border-box;
   border: none;
   border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   background-color: #4CAF50; /* Green */
   color: white;
   cursor: pointer;

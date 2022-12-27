@@ -4,31 +4,37 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <link rel="stylesheet" type="text/css" href="SAMstyle.css"/>
 
     <title></title>
+    <link rel="stylesheet" type="text/css" href="SAMstyle.css"/>
 </head>
 <body style="background-image: url('background.png');">
+
     <style>
         input[value="Delete Match"] {
     background: red;
 }
-        input[type="submit"] {
+
+input[type="submit"] {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-        }
+}
 
-    input[value="Delete Match"]:hover {
-        background: #cc0000;
-    }
+input[value="Delete Match"]:hover {
+    background: #cc0000;
+}
 
-    form {
-        background-color: white;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
-
-    }
-
+form {
+    width: 1000px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-family: Roboto
+}
     </style>
-  <h1>Sports Association Manager</h1>
+
 
   <form id="form1" runat="server">
   <!-- Add a new match form -->

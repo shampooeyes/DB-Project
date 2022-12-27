@@ -12,6 +12,10 @@
         form {
     background-color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+    margin: 50px auto;
+        }
+        input[type="submit"] {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
     </style>
 

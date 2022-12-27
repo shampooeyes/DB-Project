@@ -143,7 +143,9 @@ namespace DB_Project
                 SqlCommand checkClubExists = new SqlCommand($"SELECT name FROM Club WHERE name = '{clubName}'", conn);
                 checkClubExists.CommandType = CommandType.Text;
 
+                conn.Open();
                 string clubExists = (string) checkClubExists.ExecuteScalar();
+                conn.Close();
                 if (clubExists == null)
                 {
                     registerResponse.Text = "Club does not exist.";
@@ -155,10 +157,19 @@ namespace DB_Project
                 loginFunc.Parameters.Add(new SqlParameter("@club_name", clubName));
 
                 conn.Open();
-                loginFunc.ExecuteNonQuery();
+                try
+                {
+                int i = loginFunc.ExecuteNonQuery();
+                } catch (Exception _)
+                {
+                    registerResponse.Text = "This club already has a registered representative.";
+                    return;
+                }
+                
                 conn.Close();
 
                 Session["username"] = username;
+                Session["club"] = clubName;
                 Response.Redirect("ClubRepresentative.aspx");
                 return;
             } else if (accountType == "fan")

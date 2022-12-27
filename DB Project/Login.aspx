@@ -46,6 +46,7 @@
       padding: 10px 20px;
       font-size: 16px;
       cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
 
     .login-form input[id="registerButton"] {

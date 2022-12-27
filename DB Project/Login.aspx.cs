@@ -104,6 +104,12 @@ namespace DB_Project
                         Response.Redirect("SportsAssociationManager.aspx");
                         break;
                     case "club_representative":
+                        SqlCommand getClubNameProc = new SqlCommand($"SELECT club FROM allClubRepresentatives WHERE username = '{username}'", conn);
+                        getClubNameProc.CommandType = CommandType.Text;
+                        conn.Open();
+                        string clubName = (string) getClubNameProc.ExecuteScalar();
+                        Session["club"] = clubName;
+                        conn.Close();
                         Response.Redirect("ClubRepresentative.aspx");
                         break;
                 }
