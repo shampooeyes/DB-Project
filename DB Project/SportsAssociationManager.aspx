@@ -8,7 +8,26 @@
 
     <title></title>
 </head>
-<body>
+<body style="background-image: url('background.png');">
+    <style>
+        input[value="Delete Match"] {
+    background: red;
+}
+        input[type="submit"] {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+    input[value="Delete Match"]:hover {
+        background: #cc0000;
+    }
+
+    form {
+        background-color: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+
+    }
+
+    </style>
   <h1>Sports Association Manager</h1>
 
   <form id="form1" runat="server">

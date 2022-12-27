@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="background.png" />
     <Content Include="ClubRepresentative.aspx" />
     <Content Include="Fan.aspx" />
     <Content Include="Homepage.aspx" />

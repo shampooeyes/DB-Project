@@ -33,6 +33,15 @@ namespace DB_Project
         protected global::System.Web.UI.WebControls.GridView gvStadiumTable;
 
         /// <summary>
+        /// requestsResponse control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label requestsResponse;
+
+        /// <summary>
         /// gvReqTable control.
         /// </summary>
         /// <remarks>
@@ -40,6 +49,15 @@ namespace DB_Project
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView gvReqTable;
+
+        /// <summary>
+        /// pendingRequestsResponse control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label pendingRequestsResponse;
 
         /// <summary>
         /// gvUnReqTable control.

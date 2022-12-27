@@ -23,7 +23,7 @@ namespace DB_Project
             string connStr = ConfigurationManager.ConnectionStrings["DBProject"].ConnectionString;
             SqlConnection conn = new SqlConnection(connStr);
 
-            string sql = "SELECT * from Stadium WHERE name= @Stadium_name";
+            string sql = "SELECT name AS 'Stadium Name', location AS 'Location', status AS 'Status', capacity AS 'Capacity' from Stadium WHERE name= @Stadium_name";
             SqlCommand cmd = new SqlCommand(sql, conn);
 
             cmd.Parameters.Add(new SqlParameter("@Stadium_name", value: Session["stadium"]));
@@ -45,9 +45,15 @@ namespace DB_Project
             cmd.CommandType= CommandType.Text; 
 
             conn.Open();
+            string checkEmpty = (string) cmd.ExecuteScalar();
+            if (checkEmpty == null )
+            {
+                requestsResponse.Text = "No Requests Found 😞";
+            }
             SqlDataReader reader = cmd.ExecuteReader();
             gvReqTable.DataSource = reader;
             gvReqTable.DataBind();
+            reader.Close();
             conn.Close();
         }
 
@@ -61,9 +67,15 @@ namespace DB_Project
             cmd.CommandType = CommandType.Text;
 
             conn.Open();
+            string checkEmpty = (string)cmd.ExecuteScalar();
+            if (checkEmpty == null)
+            {
+                pendingRequestsResponse.Text = "No Requests Found 😞";
+            }
             SqlDataReader reader = cmd.ExecuteReader();
             gvUnReqTable.DataSource = reader;
             gvUnReqTable.DataBind();
+            reader.Close();
             conn.Close();
         }
 
@@ -79,9 +91,10 @@ namespace DB_Project
             int rowIndex = row.RowIndex;
 
             string username = (string) Session["username"];
-            string hostName = gvUnReqTable.Rows[rowIndex].Cells[1].Text;
-            string guestName = gvUnReqTable.Rows[rowIndex].Cells[2].Text;
-            string starTime = gvUnReqTable.Rows[rowIndex].Cells[3].Text;
+            string hostName = gvUnReqTable.Rows[rowIndex].Cells[3].Text;
+            string guestName = gvUnReqTable.Rows[rowIndex].Cells[4].Text;
+            string startTime = gvUnReqTable.Rows[rowIndex].Cells[5].Text;
+        
 
             string connStr = ConfigurationManager.ConnectionStrings["DBProject"].ConnectionString;
             SqlConnection conn = new SqlConnection(connStr);
@@ -97,7 +110,13 @@ namespace DB_Project
             addSmProc.Parameters.Add(new SqlParameter("@manager_username", username));
             addSmProc.Parameters.Add(new SqlParameter("@host_name", hostName));
             addSmProc.Parameters.Add(new SqlParameter("@guest_name", guestName));
-            addSmProc.Parameters.Add(new SqlParameter("@start_time", starTime));
+            addSmProc.Parameters.Add(new SqlParameter("@start_time", startTime));
+
+            conn.Open();
+            addSmProc.ExecuteNonQuery();
+            conn.Close();
+
+            Response.Redirect("StadiumManager.aspx");
         }
     }
 }

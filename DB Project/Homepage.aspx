@@ -7,9 +7,11 @@
         .card {
             width: 300px;
             height: 200px;
+            background-color: white;
             border: 1px solid black;
             border-radius: 5px;
             padding: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
             margin: 10px;
             display: flex;
             align-items: center;
@@ -45,7 +47,6 @@
             width: 1000px;
             margin: 0 auto;
             padding: 20px;
-            border: 1px solid #ccc;
             border-radius: 5px;
             font-family: Roboto;
             display: flex;
@@ -53,7 +54,7 @@
         }
     </style>
 </head>
-<body>
+<body  style="background-image: url('background.png');">
     <form runat="server" method="post">
         <div id="myDiv" class="card">
             <div class="title">System Admin Account</div>

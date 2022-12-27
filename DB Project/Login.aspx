@@ -16,6 +16,8 @@
       width: 300px;
       margin: 100px auto;
       border: 1px solid #ccc;
+      background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
       border-radius: 5px;
       padding: 20px;
       text-align: center;
@@ -28,11 +30,12 @@
     }
 
     .login-form input[type="text"], .login-form input[type="password"] {
-      width: 100%;
+      width: 90%;
       border: 1px solid #ccc;
       border-radius: 5px;
       padding: 8px;
       font-size: 16px;
+      margin: 0 auto; 
     }
 
     .login-form input[type="submit"] {
@@ -61,7 +64,7 @@
     }
   </style>
 </head>
-<body>
+<body style="background-image: url('background.png');">
   <form class="login-form" runat="server">
     <h2>Login</h2>
     <label for="username">Username:</label>

@@ -6,7 +6,7 @@
 <head runat="server">
     <title></title>
 </head>
-<body>
+<body style="background-image: url('background.png');">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -21,6 +21,8 @@
             border-radius: 5px;
             padding: 20px;
             text-align: center;
+      background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
         }
 
         label {
@@ -30,7 +32,7 @@
         }
 
         input[type="text"], input[type="password"] {
-            width: 100%;
+            width: 90%;
             border: 1px solid #ccc;
             border-radius: 5px;
             padding: 8px;

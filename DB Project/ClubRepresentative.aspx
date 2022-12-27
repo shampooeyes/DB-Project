@@ -6,7 +6,7 @@
 <head runat="server">
     <title></title>
 </head>
-<body>
+<body style="background-image: url('background.png');">
     <form id="form1" runat="server">
         <div>
         </div>

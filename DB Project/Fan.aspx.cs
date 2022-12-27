@@ -52,7 +52,6 @@ namespace DB_Project
 
             conn.Open();
             SqlDataReader reader = viewAvailableMatchesProc.ExecuteReader();
-
             availableMatchesGrid.DataSource = reader;
             availableMatchesGrid.DataBind();
 

@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="SAMstyle.css"/>
     <title></title>
 </head>
-<body>
+<body style="background-image: url('background.png');">
     <style>
         input[value="Purchase Ticket"] {
     background-color: #4caf50;
@@ -21,6 +21,13 @@
     border-radius: 6px;
     font-size: 16px;
     cursor: pointer;
+
+    }
+
+        form {
+            background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+        }
 }
     </style>
     <form id="form1" runat="server">
