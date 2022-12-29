@@ -114,12 +114,20 @@ namespace DB_Project
                     registerResponse.Text = "Stadium does not exist.";
                     return;
                 }
-
+                
                 loginFunc.CommandText = "addStadiumManager";
                 loginFunc.Parameters.Add(new SqlParameter("@stadium_name", stadiumName));
 
                 conn.Open();
-                loginFunc.ExecuteNonQuery();
+                try
+                {
+                    loginFunc.ExecuteNonQuery();
+                }
+                catch (Exception _)
+                {
+                    registerResponse.Text = "A stadium manager already exists for this stadium.";
+                    return;
+                }
                 conn.Close();
 
                 Session["username"] = username;

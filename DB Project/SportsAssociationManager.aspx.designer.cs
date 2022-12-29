@@ -132,6 +132,15 @@ namespace DB_Project
         protected global::System.Web.UI.WebControls.Button deleteMatchButton;
 
         /// <summary>
+        /// upcomingMatchesLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label upcomingMatchesLabel;
+
+        /// <summary>
         /// upcomingMatchesGrid control.
         /// </summary>
         /// <remarks>
@@ -141,6 +150,15 @@ namespace DB_Project
         protected global::System.Web.UI.WebControls.GridView upcomingMatchesGrid;
 
         /// <summary>
+        /// viewAllPlayedMatchesLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label viewAllPlayedMatchesLabel;
+
+        /// <summary>
         /// playedMatchesGrid control.
         /// </summary>
         /// <remarks>
@@ -148,6 +166,15 @@ namespace DB_Project
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView playedMatchesGrid;
+
+        /// <summary>
+        /// viewAllClubsNeverPlayedLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label viewAllClubsNeverPlayedLabel;
 
         /// <summary>
         /// clubsNeverPlayedGrid control.

@@ -17,14 +17,20 @@ namespace DB_Project
         }
         protected void viewAllUpcomingMatches(object sender, EventArgs e)
         {
+            upcomingMatchesLabel.Text = "";
             string connStr = WebConfigurationManager.ConnectionStrings["DBProject"].ToString();
             SqlConnection conn = new SqlConnection(connStr);
 
             SqlCommand viewUpcomingMatchesProc = new SqlCommand("SELECT * FROM allUpcomingMatches", conn);
             viewUpcomingMatchesProc.CommandType = CommandType.Text;
 
-
             conn.Open();
+
+            if (viewUpcomingMatchesProc.ExecuteScalar() == null)
+            {
+                upcomingMatchesLabel.Text = "No upcoming matches 😞";
+            }
+
             SqlDataReader reader = viewUpcomingMatchesProc.ExecuteReader();
 
             upcomingMatchesGrid.DataSource = reader;
@@ -36,6 +42,7 @@ namespace DB_Project
 
         protected void viewAllPlayedMatches(object sender, EventArgs e)
         {
+            viewAllPlayedMatchesLabel.Text = "";
             string connStr = WebConfigurationManager.ConnectionStrings["DBProject"].ToString();
             SqlConnection conn = new SqlConnection(connStr);
 
@@ -44,6 +51,10 @@ namespace DB_Project
 
 
             conn.Open();
+            if (viewUpcomingMatchesProc.ExecuteScalar() == null)
+            {
+                viewAllPlayedMatchesLabel.Text = "No played matches yet 😞";
+            }
             SqlDataReader reader = viewUpcomingMatchesProc.ExecuteReader();
 
             playedMatchesGrid.DataSource = reader;
@@ -54,6 +65,7 @@ namespace DB_Project
         }
         protected void viewAllClubsNeverPlayed(object sender, EventArgs e)
         {
+            viewAllClubsNeverPlayedLabel.Text = "";
             string connStr = WebConfigurationManager.ConnectionStrings["DBProject"].ToString();
             SqlConnection conn = new SqlConnection(connStr);
 
@@ -62,6 +74,10 @@ namespace DB_Project
 
 
             conn.Open();
+            if (viewClubsNeverPlayedProc.ExecuteScalar() == null)
+            {
+                viewAllClubsNeverPlayedLabel.Text = "All clubs have played each other.";
+            }
             SqlDataReader reader = viewClubsNeverPlayedProc.ExecuteReader();
 
             clubsNeverPlayedGrid.DataSource = reader;

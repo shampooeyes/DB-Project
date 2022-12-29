@@ -85,6 +85,7 @@ form {
 
   <!-- View upcoming matches table -->
   <h2>Upcoming matches</h2>
+      <asp:Label ID="upcomingMatchesLabel" runat="server" />
   <asp:GridView ID="upcomingMatchesGrid" runat="server" AutoGenerateColumns="false">
     <Columns>
       <asp:BoundField DataField="Host" HeaderText="Host Club Name" />
@@ -96,6 +97,7 @@ form {
 
   <!-- View already played matches table -->
   <h2>Already played matches</h2>
+      <asp:Label ID="viewAllPlayedMatchesLabel" runat="server" />
   <asp:GridView ID="playedMatchesGrid" runat="server" AutoGenerateColumns="false">
     <Columns>
       <asp:BoundField DataField="Host" HeaderText="Host Club Name" />
@@ -107,6 +109,7 @@ form {
 
   <!-- View pairs of club names that have never played a match -->
   <h2>Club name pairs that have never played a match</h2>
+      <asp:Label ID="viewAllClubsNeverPlayedLabel" runat="server" />
   <asp:GridView ID="clubsNeverPlayedGrid" runat="server" AutoGenerateColumns="false">
     <Columns>
       <asp:BoundField DataField="Club1" HeaderText="Club 1 Name" />
